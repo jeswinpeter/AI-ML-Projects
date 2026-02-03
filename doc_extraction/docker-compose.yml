@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  invoice-extractor:
+    build: .
+    container_name: invoice-extractor
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: python doc_extraction.py
